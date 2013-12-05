@@ -77,8 +77,8 @@ void main()
 		//hList.ListView_SetItemState( n, LVIS_FOCUSED|LVIS_SELECTED, LVIS_FOCUSED|LVIS_SELECTED);
 
 		auto dest = dir.absolutePath.buildPath(name ~ ".bin");
-		auto tdest = dest.to!(TCHAR[]);
-		hDest.SendMessage(WM_SETTEXT, 0, cast(LPARAM)tdest.ptr);
+		auto tdest = (dest ~ '\0').to!(TCHAR[]).ptr;
+		hDest.SendMessage(WM_SETTEXT, 0, cast(LPARAM)tdest);
 
 		hCmd.SendMessage(BM_CLICK, 0, 0);
 
