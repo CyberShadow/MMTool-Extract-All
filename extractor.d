@@ -7,8 +7,8 @@ import std.string;
 
 import ae.sys.windows;
 
-import win32.windows;
-import win32.commctrl;
+import core.sys.windows.windows;
+import core.sys.windows.commctrl;
 
 void main()
 {
